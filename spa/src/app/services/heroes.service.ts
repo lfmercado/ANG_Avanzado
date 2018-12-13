@@ -58,6 +58,11 @@ export class HeroesService {
   public getHeroes():Heroe[]{
     return this.heroes;
   }
+
+  getHeroe(i){
+    
+    return this.heroes[i];
+  }
 }
 
 export interface Heroe{
