@@ -59,10 +59,41 @@ export class HeroesService {
     return this.heroes;
   }
 
-  getHeroe(i){
-    
+  getHeroe(i){   
     return this.heroes[i];
   }
+  
+  getHeroeName(name){
+    console.log(name);
+    let heroesArr:Heroe[] =[];
+    name = name.toLocaleLowerCase();
+    let rps = {heroe:{},position:0};
+  for(let i = 0; i < this.heroes.length; i++){
+    if(this.heroes[i].nombre.toLocaleLowerCase() == name){
+      rps.heroe = this.heroes[i];
+      rps.position = i;
+      console.log(name);
+      console.log(i);
+      
+      
+    }
+  }
+    return  rps;
+  }
+  
+  buscarHeroes(termino:string){
+    let heroesArr:Heroe[] =[];
+    termino = termino.toLocaleLowerCase();
+    
+    for (let heroe of this.heroes) {
+      let nombre = heroe.nombre.toLocaleLowerCase();
+      if(nombre.indexOf(termino)>= 0){
+        heroesArr.push(heroe);
+      }
+    }
+    return  heroesArr;
+  }
+
 }
 
 export interface Heroe{

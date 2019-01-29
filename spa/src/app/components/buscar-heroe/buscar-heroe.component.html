@@ -1,0 +1,24 @@
+<h1>Heroes <small>Marvel & DC</small></h1>
+<hr>
+<div class="card-columns" *ngIf="res == false">    
+ 
+ <!--   <app-heroe-tarjeta (heroeSeleccionado)="verHeroe($event)" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i =  index"></app-heroe-tarjeta>                                        -->
+    <div class="card animated fadeIn fast"  *ngFor="let heroe of heroes">
+        <img class="card-img-top img-fluid" src="{{heroe.img}}" [alt]="heroe.nombre" (click)=buscarHeroeName(heroe.nombre)>
+        <div class="card-body">
+            <h5 class="card-title">{{heroe.nombre}}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <p class="card-text">{{heroe.casa}}</p>
+            <p class="card-text"><small class="text-muted">{{heroe.aparicion}}</small></p>
+            <a (click)=buscarHeroeName(heroe.nombre) class="btn btn-outline-primary btn-block">Ver más...</a>
+          </div>
+    </div>
+</div>
+<div class="row" *ngIf="res == true">
+  <div class="container">
+   <div class="alert alert-danger" role="alert">
+      ¡Lo sentimos, no se han encontrado coincidencias!
+    </div>
+  </div>
+
+</div>

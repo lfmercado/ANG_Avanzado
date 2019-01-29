@@ -1,18 +1,15 @@
-<div class="col-lg-10 row">                                            
- 
+<div class="col-lg-10 row">
   <div class="col-md-8 animated fadeIn fast">
-      <img class="card-img-top img-fluid" src="{{heroe.img}}" [alt]="heroe.nombre" (click)=verHeroe(i)>
-      <div class="card-block">
-          <h5 class="card-title">{{heroe.nombre + "  "| uppercase }}<small class="text-muted">{{heroe.aparicion | date:'y'}}</small></h5>
-          <p class="card-text" align="justify">{{heroe.bio}}</p>
-          <p class="card-text"></p>
-          
-          <!--<button type="button" class="btn btn-outline-primary btn-block">Ver más...</button>-->
-          <a [routerLink]="[ '/heroes']" class="btn btn-danger">Regresar</a>
-        </div>
+    <img class="card-img-top img-fluid" src="{{heroe.img}}" [alt]="heroe.nombre" (click)=verHeroe(i)>
+    <div class="card-block">
+      <h4 class="card-title">{{heroe.nombre + " "| uppercase }}<small class="text-muted">{{heroe.aparicion | date:'y'}}</small></h4>
+      <p class="card-text" align="justify">{{heroe.bio}}</p>
+      <p class="card-text"></p>
+      <a [routerLink]="[ '/heroes']" class="btn btn-danger">Regresar</a>
+    </div>
   </div>
   <div class="col-lg-4" style="margin-top: 40%">
     <img *ngIf="heroe.casa == 'DC'" class="img-logo" height="100px" width="100px" src="assets/img/dc.jpg">
-    <img *ngIf="heroe.casa == 'Marvel'" class="img-logo" height="100px" width="100px"  src="assets/img/marvel.jpg">
+    <img *ngIf="heroe.casa == 'Marvel'" class="img-logo" height="100px" width="100px" src="assets/img/marvel.jpg">
   </div>
 </div>
